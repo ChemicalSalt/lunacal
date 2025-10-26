@@ -7,4 +7,4 @@ This project is a responsive React UI featuring:
 - Optimized for **laptops**, with decent responsiveness on smaller screens.
 
 ## Demo
-Check out the live demo here: [Lunacal]([https://lunacal-0123.netlify.app/])
+Check out the live demo here: [Lunacal](https://lunacal-0123.netlify.app)
