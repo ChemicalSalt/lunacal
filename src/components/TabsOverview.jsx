@@ -24,7 +24,7 @@ const TabsOverview = () => {
       <img
         src={questionMark}
         alt="help icon"
-        className="absolute top-3 left-6 w-6 h-6"
+        className="absolute top-5 left-6 w-6 h-6"
       />
 
       {/* Tab bar */}

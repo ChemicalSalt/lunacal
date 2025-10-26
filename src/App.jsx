@@ -1,12 +1,13 @@
 import React from "react";
-import TabsOverview from "./components/tabsOverview";
+import TabsOverview from "./components/TabsOverview";
 import GalleryBox from "./components/GalleryBox";
 
 function App() {
   return (
     <div
-      className="w-full h-screen flex items-center justify-center overflow-auto bg-gradient-to-b from-[#373E44] to-[#191B1F]"
+      className="w-full h-screen flex items-center justify-center overflow-hidden"
       style={{
+        background: "linear-gradient(180deg, #373E44 -100%, #191B1F 100%)",
         boxShadow: "10px 10px 40px 10px #00000080",
       }}
     >
@@ -14,9 +15,8 @@ function App() {
       <div
         className="relative flex flex-col items-end justify-start"
         style={{
-          maxWidth: "90vw",
           width: "1728px",
-          height: "auto",
+          height: "895px",
           borderRadius: "28px",
           position: "relative",
           overflow: "visible",
@@ -27,20 +27,23 @@ function App() {
           className="flex flex-col items-end justify-start gap-6"
           style={{
             transformOrigin: "center right",
-            transform: "scale(0.8)", // slightly smaller for desktop
+            transform: "scale(0.80)", // slightly smaller so all fits
             paddingRight: "80px",
-            marginTop: "110px",
+            marginTop: "110px", // space on top
           }}
         >
           {/* Top Box */}
-          <div className="w-full max-w-[720px] h-auto">
+          <div style={{ width: "720px", height: "316px" }}>
             <TabsOverview />
           </div>
 
           {/* Divider between boxes */}
           <div
-            className="w-full max-w-[640px] h-[4px] rounded-[12px] self-center"
             style={{
+              width: "640px",
+              height: "4px",
+              borderRadius: "12px",
+              alignSelf: "center",
               background:
                 "linear-gradient(180deg, rgba(40,40,40,0.1) 0%, rgba(248,248,248,0.1) 100%), linear-gradient(0deg, rgba(255,255,255,0.05), rgba(255,255,255,0.05))",
               backdropFilter: "blur(9.837px)",
@@ -49,15 +52,17 @@ function App() {
           />
 
           {/* Bottom Box with its divider */}
-          <div className="flex flex-col items-center gap-5 w-full">
-            <div className="w-full max-w-[720px] h-auto">
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "20px" }}>
+            <div style={{ width: "720px", height: "330px" }}>
               <GalleryBox />
             </div>
 
             {/* Divider below bottom box */}
             <div
-              className="w-full max-w-[640px] h-[4px] rounded-[12px]"
               style={{
+                width: "640px",
+                height: "4px",
+                borderRadius: "12px",
                 background:
                   "linear-gradient(180deg, rgba(40,40,40,0.1) 0%, rgba(248,248,248,0.1) 100%), linear-gradient(0deg, rgba(255,255,255,0.05), rgba(255,255,255,0.05))",
                 backdropFilter: "blur(9.837px)",
@@ -67,44 +72,6 @@ function App() {
           </div>
         </div>
       </div>
-
-      {/* Responsive adjustments */}
-      <style>
-        {`
-          @media (max-width: 1440px) {
-            .flex-col.items-end > div {
-              transform: scale(0.7) !important;
-              padding-right: 40px !important;
-              margin-top: 80px !important;
-            }
-          }
-
-          @media (max-width: 1280px) {
-            .flex-col.items-end > div {
-              transform: scale(0.6) !important;
-              padding-right: 20px !important;
-              margin-top: 60px !important;
-            }
-          }
-
-          @media (max-width: 1024px) {
-            .flex-col.items-end > div {
-              transform: scale(0.5) !important;
-              padding-right: 10px !important;
-              margin-top: 40px !important;
-            }
-          }
-
-          @media (max-width: 768px) {
-            .flex-col.items-end {
-              align-items: center !important;
-              transform: scale(0.45) !important;
-              padding-right: 0 !important;
-              margin-top: 20px !important;
-            }
-          }
-        `}
-      </style>
     </div>
   );
 }
